@@ -261,7 +261,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/02/28/hello-world1 - 副本 (16)/" data-id="cje6oevbh0007i4vrrg5ot3gn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/02/28/hello-world1 - 副本 (16)/" data-id="cje6oqw8p00084wvr5w18ylkj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -359,6 +359,10 @@
 
 
     
+    
+        <section id="comments">
+	<div id="commentContainer"></div>
+</section>
     
 
 </section>
@@ -517,6 +521,22 @@
     </div>
 </footer>
         
+    
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'haojiayu',
+			repo: 'https://github.com/haojiayu/haojiayu.github.io.git',
+			oauth: {
+				client_id: '8453c9a2eeb389889a94',
+				client_secret: 'ca7d7c933b3df508c96ff419b9f0039c38356df1',
+			},
+		})
+		gitment.render('commentContainer')
+	</script>
+	
+
 
 
     
