@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-13T04:53:27.025Z</updated>
+  <updated>2018-03-13T08:11:32.885Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>maven项目启动报[INFO] Scanning for projects...</title>
+    <link href="http://yoursite.com/2017/08/10/maven-error-2018-03-13/"/>
+    <id>http://yoursite.com/2017/08/10/maven-error-2018-03-13/</id>
+    <published>2017-08-10T02:10:00.000Z</published>
+    <updated>2018-03-13T08:11:32.885Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在学习涛哥的跟我一起学shiro  地址：[<a href="http://jinnianshilongnian.iteye.com/blog/2018398]" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/blog/2018398]</a><br>在 二十三章 多项目集中权限管理及分布式会话时 install shiro-example-chapter23-core 模块报错，google查原因是因为在pom文件中使用了继承，导致报父类的pom文件解析失败，错误如下：</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[INFO] Scanning for projects...</span><br><span class="line">[ERROR] [ERROR] Some problems were encountered while processing the POMs:</span><br><span class="line">[WARNING] &apos;parent.relativePath&apos; of POM com.github.zhangkaitao:shiro-example-chapter23-core:1.0-SNAPSHOT (F:\git\shiro-example\shiro-example-chapter23-core\pom.xml) points at com.github.zhangkaitao:shiro-example instead of com.github.zhangkaitao:shiro-example-chapter23-pom, please verify your project structure @ line 6, column 13</span><br><span class="line">[FATAL] Non-resolvable parent POM for com.github.zhangkaitao:shiro-example-chapter23-core:1.0-SNAPSHOT: Could not find artifact com.github.zhangkaitao:shiro-example-chapter23-pom:pom:1.0-SNAPSHOT and &apos;parent.relativePath&apos; points at wrong local POM @ line 6, column 13</span><br><span class="line"> @</span><br></pre></td></tr></table></figure><p>解决方案如下：<br>在pom文件中加入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;relativePath&gt;../shiro-example-chapter23-pom/pom.xml&lt;/relativePath&gt;</span><br></pre></td></tr></table></figure><p>完整文件如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">        &lt;artifactId&gt;shiro-example-chapter23-pom&lt;/artifactId&gt;</span><br><span class="line">        &lt;groupId&gt;com.github.zhangkaitao&lt;/groupId&gt;</span><br><span class="line">        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath&gt;../shiro-example-chapter23-pom/pom.xml&lt;/relativePath&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br></pre></td></tr></table></figure><p>测试：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time: 4.556 s</span><br><span class="line">[INFO] Finished at: 2018-03-10T20:14:54+08:00</span><br><span class="line">[INFO] Final Memory: 12M/155M</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br></pre></td></tr></table></figure><p>ok</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在学习涛哥的跟我一起学shiro  地址：[&lt;a href=&quot;http://jinnianshilongnian.iteye.com/blog/2018398]&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://jinnianshilongnian.iteye.com/blog/2018398]&lt;/a&gt;&lt;br&gt;在 二十三章 多项目集中权限管理及分布式会话时 install shiro-example-chapter23-core 模块报错，google查原因是因为在pom文件中使用了继承，导致报父类的pom文件解析失败，错误如下：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="maven" scheme="http://yoursite.com/tags/maven/"/>
+    
+      <category term="shiro" scheme="http://yoursite.com/tags/shiro/"/>
+    
+  </entry>
   
   <entry>
     <title>System.arraycopy()方法解析</title>
